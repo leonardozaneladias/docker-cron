@@ -4,6 +4,8 @@ RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install -y cron curl \
     # Remove package lists for smaller image sizes
     && rm -rf /var/lib/apt/lists/* \
+    && apt install ca-certificates \
+    && update-ca-certificates --fresh \
     && which cron \
     && rm -rf /etc/cron.*/*
 
