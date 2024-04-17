@@ -5,7 +5,7 @@ RUN apt-get update \
     # Remove package lists for smaller image sizes
     && rm -rf /var/lib/apt/lists/* \
     && apt-get update \
-    && apt install ca-certificates \
+    && apt install -y ca-certificates \
     && update-ca-certificates --fresh \
     && which cron \
     && rm -rf /etc/cron.*/*
